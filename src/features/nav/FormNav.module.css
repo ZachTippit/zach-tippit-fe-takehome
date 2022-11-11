@@ -1,0 +1,17 @@
+#formnav{
+    background-color: #f2f5fa;
+    height: 100%;
+    position: relative;
+}
+
+#navLogo{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#legalText{
+    position: absolute;
+    bottom: 0;
+}

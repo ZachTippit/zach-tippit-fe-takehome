@@ -1,0 +1,19 @@
+#footer{
+  position: absolute;
+  bottom: 0;
+  height: 15%;
+  background-color: #0d0d46;
+  width: 100%;
+}
+
+#buttonContainer{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonContainer > button{
+  margin: 1rem;
+  padding: 0.5rem;
+}
