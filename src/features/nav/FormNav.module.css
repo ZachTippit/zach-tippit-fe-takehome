@@ -1,12 +1,16 @@
 #formNavContainer{
     background-color: #f2f5fa;
     height: 100%;
-    position: relative;
 }
 
-#formNav{
+#formNavDesktop{
     width: 80%;
     margin: auto;
+}
+
+#formNavMobile{
+    width: 100%;
+    background-color: #f2f5fa;
 }
 
 #navLogo{
@@ -16,7 +20,7 @@
     align-items: center;
 }
 
-#navLogo img {
+.logo{
     max-width: 200px;
     object-fit: contain;
 }
@@ -35,11 +39,10 @@
     padding: 1rem 0;
 }
 
-
-
-
 .navLink{
     display: flex;
+    max-width: 200px;
+    margin: auto;
     min-height: 40px;
     -webkit-box-pack: start;
     justify-content: flex-start;
@@ -61,6 +64,21 @@
     background-clip: content-box;
     position: relative;
 
+}
+
+.toggle{
+    object-fit: contain;
+    width: 20px;
+    transition: 0.15s all ease-in-out;
+}
+
+.activeToggle{
+    composes: toggle;
+    transform: rotate(-180deg);
+}
+
+.inactiveToggle{
+    composes: toggle;
 }
 
 .navLine{
@@ -112,6 +130,8 @@
 .activeStyle {
     width: fit-content;
     color: #4123ff;
+    font-weight: 700;
+    font-size: 13px;
     border-bottom: 1px dashed rgb(65, 35, 255);
 }
 
@@ -123,4 +143,80 @@
     cursor: none;
     color: rgb(184, 184, 188);
     user-select: none !important;
+}
+
+.accordionHeaderContainer {
+    cursor: pointer;
+    padding: 18px 0;
+    width: 100%;
+    transition: 0.4s;
+}
+
+.accordionHeader{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.accordionHeader p > img {
+    vertical-align: middle;
+    margin-left: 0.75rem;
+}
+
+.accordionContent{
+    transition: 0.5s all ease-in-out;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+  
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+#progressBarContainer{
+    width: 100%;
+    height: 8px;
+    background-color: #CFFFEB;
+}
+
+#progress{
+    height: 8px;
+    background-color: #40FFB1;
+}
+
+@media screen and (max-width: 768px) {
+    #formNavMobile{
+        visibility: visible;
+    }
+
+    #formNavDesktop{
+        display: none;
+    }
+
+    .logo{
+        max-width: 150px;
+    }
+
+    #legalText{
+        width: 70%;
+        position: inherit;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #formNavDesktop{
+        visibility: visible;
+    }
+
+    #formNavMobile{
+        display: none;
+    }
 }

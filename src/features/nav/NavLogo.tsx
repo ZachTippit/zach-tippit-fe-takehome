@@ -5,7 +5,7 @@ import styles from './FormNav.module.css'
 const NavLogo = () => {
   return (
     <div id={styles.navLogo}>
-      <img src={CoterieLogo} id={styles.logoImg} alt='Coterie Logo' />
+      <img src={CoterieLogo} className={styles.logo} alt='Coterie Logo' />
     </div>
   )
 }

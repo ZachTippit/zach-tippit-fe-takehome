@@ -8,7 +8,7 @@ import { titleCase } from '../../utils/textParser'
 //  Source: https://stackoverflow.com/questions/64489395/converting-snake-case-string-to-title-case
 
 
-const BreadcrumbsMenu = () => {
+const BreadcrumbsMenuMobile = () => {
   
   const { pages, activePage, maxActivePage } = useSelector((state: any) => state.formState)
   const dispatch = useDispatch();
@@ -32,7 +32,7 @@ const BreadcrumbsMenu = () => {
   return (
     <div>
       { pages.map((page: string, index: number) => (
-        <div key={page} className={styles.navLink}>
+        <div key={page} className={styles.navLink}>  
           <div className={styles.navStepperSegment}>
             <div className={(index <= maxActivePage) ? styles.activeNavDot : styles.inactiveNavDot} />
             {index<(pages.length - 1) && <div className={(index <= maxActivePage) ? styles.activeNavLine : styles.inactiveNavLine} />}
@@ -53,4 +53,4 @@ const BreadcrumbsMenu = () => {
   )
 }
 
-export default BreadcrumbsMenu
+export default BreadcrumbsMenuMobile

@@ -1,4 +1,5 @@
 #form{
+    margin-top: 4rem;
     margin-left: 80px;
     background-color: #fff;
     transition: 0.25s all ease-in-out;
@@ -31,6 +32,11 @@
 
 @media screen and (max-width: 768px) {
     #form{
-        margin-left: 0;
+        width: 80%;
+        margin: 2rem auto;
+    }
+
+    .textInput{
+        width: 100%;
     }
 }

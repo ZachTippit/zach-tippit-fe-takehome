@@ -56,7 +56,7 @@
 
 @media only screen and (max-width: 768px) {
   #app-container{
-    grid-template: 100px 1fr / 1fr;
+    grid-template: auto 1fr / 1fr;
   }
 
 }

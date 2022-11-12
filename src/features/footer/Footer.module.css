@@ -8,12 +8,17 @@
 
 #buttonContainer{
   height: 100%;
+  width: 50%;
+  margin: auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
 }
 
 #saveForLaterText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-decoration: none;
   font-weight: 700;
   color: #40ffb1;
@@ -66,4 +71,18 @@
 
 .inactiveBtn:hover{
   background-color: #42426f;
+}
+
+@media screen and (max-width: 768px) {
+  #footer{
+    height: 20%;
+  }
+
+  #saveForLaterText{
+    transform: translate(-50%, 25%);
+  }
+
+  #buttonContainer{
+    width: 100%;
+  }
 }
