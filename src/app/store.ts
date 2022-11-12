@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { formData, formState } from './initialState'
-// import gameConfigReducer from '../_features/gameConfig/gameConfigSlice'
+import formStateReducer from '../features/formStateSlice'
+import formDataReducer from '../features/formDataReducer'
 
 export const initialState = {
     formData,
@@ -9,9 +10,8 @@ export const initialState = {
 
 export const store = configureStore({
     reducer: {
-        // gameConfig: gameConfigReducer,
-        // gameState: gameStateReducer,
-        // windowHandler: windowHandlerReducer,
+        formState: formStateReducer,
+        formData: formDataReducer
     },
 })
 

@@ -1,7 +1,12 @@
-#formnav{
+#formNavContainer{
     background-color: #f2f5fa;
     height: 100%;
     position: relative;
+}
+
+#formNav{
+    width: 80%;
+    margin: auto;
 }
 
 #navLogo{
@@ -11,7 +16,111 @@
     align-items: center;
 }
 
+#navLogo img {
+    max-width: 200px;
+    object-fit: contain;
+}
+
 #legalText{
     position: absolute;
     bottom: 0;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+#legalText a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #4123ff;
+    padding: 1rem 0;
+}
+
+
+
+
+.navLink{
+    display: flex;
+    min-height: 40px;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.navStepperSegment{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+}
+
+.navDot{
+    border-radius: 20px;
+    width: 8px;
+    height: 8px;
+    margin-top: 1px;
+    margin-left: 2px;
+    padding: 0px;
+    background-clip: content-box;
+    position: relative;
+
+}
+
+.navLine{
+    flex: 1 1 0%;
+    margin: 0px 0px -3px 6px;
+}
+
+.activeNavLine {
+    composes: navLine;
+    border-left: 1px solid rgb(65, 35, 255);
+}
+
+.inactiveNavLine{
+    composes: navLine;
+    border-left: 1px dashed rgb(184, 184, 188);
+}
+
+.activeNavDot{
+    composes: navDot;
+    border: 1px solid rgb(65, 35, 255);
+    background-color: rgb(64, 255, 177);
+}
+
+.inactiveNavDot{
+    composes: navDot;
+    border: 1px solid rgb(184, 184, 188);
+    background-color: #fff;
+}
+
+.navTextContainer{ 
+    display: flex;
+    flex-direction: column;
+    margin: 0px 8px 0px 15.5px;
+    padding-bottom: 20px;
+}
+
+.navText{
+    text-decoration: none;
+    display: block;
+    margin: 0;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.navText:hover{
+    cursor: pointer;
+}
+
+.activeStyle {
+    width: fit-content;
+    color: #4123ff;
+    border-bottom: 1px dashed rgb(65, 35, 255);
+}
+
+.inactiveStyle {
+    color: rgb(13, 13, 70);
+}
+
+.unselectable {
+    cursor: none;
+    color: rgb(184, 184, 188);
+    user-select: none !important;
 }

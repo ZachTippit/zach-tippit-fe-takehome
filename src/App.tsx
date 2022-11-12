@@ -1,52 +1,30 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import './App.css';
 import Layout from './components/Layout';
 import Footer from './features/footer/Footer';
-import QuoteForm from './features/form/QuoteForm';
+import BusinessInfo from './features/form/BusinessInfo';
+import ContactDetails from './features/form/ContactDetails';
+import FinanceBasics from './features/form/FinanceBasics';
+import Industry from './features/form/Industry';
+import Policies from './features/form/Policies';
 
 const App = () => {
   return (
     <Router>
-      <div>
-        <h1>Test</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Routes>
-          <Route element={<Layout />}>
-            <Route path="/about" element={<QuoteForm />} />
-            <Route path="/users" element={<QuoteForm />} />
-            <Route path="/" element={<QuoteForm />} />
-          </Route>
-        </Routes>
-        <Footer />
-      </div>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/industry" element={<Industry />} />
+          <Route path="/business_information" element={<BusinessInfo />} />
+          <Route path="/finance_basics" element={<FinanceBasics />} />
+          <Route path="/contact_details" element={<ContactDetails />} />
+          <Route path="/policies" element={<Policies />} />
+          <Route path="*" element={<Navigate to="/industry" replace />} />
+        </Route>
+      </Routes>
+      <Footer />
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 export default App;

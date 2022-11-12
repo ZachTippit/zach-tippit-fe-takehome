@@ -6,10 +6,12 @@ import OfficialText from './OfficialText';
 
 const FormNav = () => {
   return (
-    <div id={styles.formnav}>
+    <div id={styles.formNavContainer}>
+      <div id={styles.formNav}>
         <NavLogo />
         <BreadcrumbsMenu />
         <OfficialText />
+      </div>
     </div>
   )
 }

@@ -1,19 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import BusinessInfo from './BusinessInfo'
+import ContactDetails from './ContactDetails'
+import FinanceBasics from './FinanceBasics'
+import Industry from './Industry'
 import styles from './QuoteForm.module.css'
+import { useSelector } from 'react-redux'
 
 const QuoteForm = () => {
+  const { page } = useSelector((state: any) => state.formState)
+
+  useEffect(() => {
+    console.log(page[0])
+  }, [])
+
   return (
     <div id={styles.form}>
-      Form
-      {/* Form to collect:
-      - Business Name (string)
-      - Occupation (string converts to industryId on selection)
-      - Email (string)
-      - Annual Sales (integer select) 
-      - Annual Payroll (integer select) 
-      - # Employees (integer)
-      - Zip Code (string)
-      */}
+      <Industry />
+      <BusinessInfo /> 
+      <FinanceBasics />
+      <ContactDetails />
     </div>
   )
 }
