@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { formData, formState } from './initialState'
 import formStateReducer from '../features/formStateSlice'
-import formDataReducer from '../features/formDataReducer'
+import formDataReducer from '../features/formDataSlice'
 
 export const initialState = {
     formData,

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { setActivePage } from '../formStateSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from './FormNav.module.css'
-import { titleCase } from '../../utils/textParser'
+import { titleCase } from '../../utils/textInputHandlers'
 
 //  Source: https://stackoverflow.com/questions/64489395/converting-snake-case-string-to-title-case
 
@@ -11,7 +11,9 @@ import { titleCase } from '../../utils/textParser'
 const BreadcrumbsMenuMobile = () => {
   
   const { pages, activePage, maxActivePage } = useSelector((state: any) => state.formState)
+
   const dispatch = useDispatch();
+  
   let activeStyle = {
     width: 'fit-content',
     color: '#4123ff',

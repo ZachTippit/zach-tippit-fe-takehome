@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setEmail } from '../formDataReducer'
+import { setContactEmail } from '../formDataSlice'
 import { Helmet } from 'react-helmet'
 import styles from './QuoteForm.module.css'
+import { setActivePage } from '../formStateSlice'
 
 const ContactDetails = () => {
 
   const dispatch = useDispatch();
-  const { email } = useSelector((state: any) => state.formData)
+  const { contactEmail } = useSelector((state: any) => state.formData)
 
+  useEffect(() => {
+    dispatch(setActivePage(3))
+  }, [])
+
+  
   return (
     <div className={styles.formPage}>
       <Helmet>
@@ -19,8 +25,9 @@ const ContactDetails = () => {
       <p><b>Email</b></p>
       <input 
         placeholder="jane.doe@gmail.com"
-        value={email || ''}
-        onChange={(e) => dispatch(setEmail(e.target.value))}
+        type="email"
+        value={contactEmail || ''}
+        onChange={(e) => dispatch(setContactEmail(e.target.value))}
         className={styles.textInput}
       />
 

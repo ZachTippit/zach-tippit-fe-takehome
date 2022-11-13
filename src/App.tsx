@@ -10,6 +10,7 @@ import Industry from './features/form/Industry';
 import Policies from './features/form/Policies';
 
 const App = () => {
+  
   return (
     <Router>
       <Routes>

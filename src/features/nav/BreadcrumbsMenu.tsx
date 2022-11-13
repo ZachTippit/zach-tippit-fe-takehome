@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { setActivePage } from '../formStateSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from './FormNav.module.css'
-import { titleCase } from '../../utils/textParser'
+import { titleCase } from '../../utils/textInputHandlers'
 
 //  Source: https://stackoverflow.com/questions/64489395/converting-snake-case-string-to-title-case
 

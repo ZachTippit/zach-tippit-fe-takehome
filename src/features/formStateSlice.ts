@@ -11,14 +11,12 @@ export const formStateSlice = createSlice({
                 formState.maxActivePage = action.payload
             }
         },
-        setMaxActivePage: (formState, action) => {
-            if(action.payload > formState.maxActivePage){
-               
-            }
+        setAvailablePolicyTypes: (formState, action) => {
+            formState.availablePolicyTypes = action.payload
         }
     }
 })
 
-export const {setActivePage, setMaxActivePage} = formStateSlice.actions;
+export const {setActivePage, setAvailablePolicyTypes} = formStateSlice.actions;
 
 export default formStateSlice.reducer;
