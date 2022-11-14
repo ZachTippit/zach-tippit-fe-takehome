@@ -41,6 +41,8 @@ There was a snag with incorporating routing testing and went over my personally 
 - CSS Animations to enhance UX. 
 - Better error handling for refreshing and revisiting the form (e.g. refreshing on form pages)
 - Adding localStorage for form details which would greatly improve revisiting/reloadability and the aforementioned error handling.
+- Tooltips for additional form info context
+- Save for later functionality to remind the user to come back, even if localStorage will cache the form data.
 
 ## License
 
