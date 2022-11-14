@@ -43,6 +43,7 @@ There was a snag with incorporating routing testing and went over my personally 
 - Adding localStorage for form details which would greatly improve revisiting/reloadability and the aforementioned error handling.
 - Tooltips for additional form info context
 - Save for later functionality to remind the user to come back, even if localStorage will cache the form data.
+- Summary page to show all form entries and policy selections. Can act as a "confirm this receipt" before heading to a "payment gateway". Moreso just useful in this instance to see all form data and policy selections input by user.
 
 ## License
 
