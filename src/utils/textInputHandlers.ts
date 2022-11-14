@@ -9,3 +9,16 @@ export const capitalizeFirstLetter = (string: string): string => {
 }
 
 // Source:  https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+
+export const convertToFullName = (policyName: string) => {
+    switch(policyName){
+        case 'GL':
+            return 'General Liability'
+        case 'BOP':
+            return 'Business Owners Policy'
+        case 'PL':
+            return 'Professional Liability'
+        default:
+            return policyName
+    }
+}

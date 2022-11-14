@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import styles from './Footer.module.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { setActivePage, setAvailablePolicyTypes } from '../formStateSlice';
-import { createAPIObject, fetchCoterieAPI } from '../../api/coterieAPIHandler';
+import { setActivePage, fetchCoterieAPI } from '../formStateSlice';
+import { AppDispatch } from '../../app/store';
 
 const Footer = () => {
 
@@ -12,7 +12,7 @@ const Footer = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   const prevPage = () => {
     if(activePage > 0){
@@ -64,17 +64,9 @@ const Footer = () => {
   }
 
   const submitForm = async () => {
-    const object = createAPIObject(formData)
-    const response = await fetchCoterieAPI(object)
-    console.log(response)
-    if(typeof response.availablePolicyTypes !== 'undefined'){
-      dispatch(setAvailablePolicyTypes(response.availablePolicyTypes))
-    }
+    dispatch(fetchCoterieAPI(formData))
+    nextPage();
   }
-
-  useEffect(() => {
-    console.log(availablePolicyTypes)
-  }, [availablePolicyTypes])
 
   return (
     <div id={styles.footer}>
