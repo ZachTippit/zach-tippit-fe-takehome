@@ -1,18 +1,23 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { formData, formState } from './initialState'
+import { combineReducers, configureStore, PreloadedState } from '@reduxjs/toolkit'
 import formStateReducer from '../features/formStateSlice'
 import formDataReducer from '../features/formDataSlice'
 
-export const initialState = {
-    formData,
-    formState
-}
-
-export const store = configureStore({
-    reducer: {
-        formState: formStateReducer,
-        formData: formDataReducer
-    },
+const rootReducer = combineReducers({
+    formState: formStateReducer,
+    formData: formDataReducer
 })
 
+export const store = configureStore({
+    reducer: rootReducer,
+})
+
+export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
+    return configureStore({
+        reducer: rootReducer,
+        preloadedState
+    })
+}
+
+export type RootState = ReturnType<typeof rootReducer>
+export type AppStore = ReturnType<typeof setupStore>
 export type AppDispatch = typeof store.dispatch;

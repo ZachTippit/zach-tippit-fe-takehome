@@ -1,39 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import styles from './QuoteForm.module.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { setSearchingOccupation, setOccupation } from '../formDataSlice';
-import { capitalizeFirstLetter } from '../../utils/textInputHandlers';
+import { setSearchingOccupation, setOccupation } from '../features/formDataSlice';
+import { capitalizeFirstLetter } from '../utils/textInputHandlers';
 import { Helmet } from 'react-helmet'
-import { setActivePage } from '../formStateSlice';
+import { setActivePage } from '../features/formStateSlice';
+import { JOB_LIST } from '../lib/CONSTANTS';
 
-const jobList = [
-  {
-    name: 'plumber',
-    industryId: 10537
-  },
-  {
-    name: 'software developer',
-    industryId: 10391
-  },
-  {
-    name: 'lawyer',
-    industryId: 10415
-  },
-  {
-    name: 'handyman',
-    industryId: 10109
-  }
-]
+
 
 const Industry = () => {
 
   const dispatch = useDispatch();
-  const { searchingOccupation, occupation } = useSelector((state: any) => state.formData)
+  const { occupation, industryId } = useSelector((state: any) => state.formData)
   const [ filteredArray, setFilteredArray ] = useState<any[]>([{name: '', industryId: ''}])
 
   const selectIndustry = (occ: string) => {
     let jobArray: any[] = []
-    jobList.map(job => {
+    JOB_LIST.forEach(job => {
       if(job.name.includes(occ)){
         jobArray.push(job)
       }
@@ -48,6 +32,7 @@ const Industry = () => {
 
   useEffect(() => {
     dispatch(setActivePage(0))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -68,7 +53,7 @@ const Industry = () => {
         className={styles.textInput}  
       />
       <div>
-        <p><b>Did you mean...</b></p>
+        {(typeof occupation !== 'undefined' && typeof industryId === 'undefined') && <p><b>Did you mean...</b></p>}
         {filteredArray.map(job => (
           <button 
             key={job.name} 

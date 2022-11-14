@@ -10,6 +10,16 @@ export const capitalizeFirstLetter = (string: string): string => {
 
 // Source:  https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
 
+export const validateEmail = (email: string) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+// Source: https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
+
 export const convertToFullName = (policyName: string) => {
     switch(policyName){
         case 'GL':

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { formData } from '../app/initialState'
 import { capitalizeFirstLetter } from '../utils/textInputHandlers'
+import { MAX_HUMAN_POPULATION } from '../lib/CONSTANTS'
 
 export const formDataSlice = createSlice({
     name: 'formData',
@@ -20,13 +21,17 @@ export const formDataSlice = createSlice({
         setEmployeeCount: (formData, action) => {
             if(action.payload <= 0){
                 formData.employeeCount = 0
+            } else if (action.payload >= MAX_HUMAN_POPULATION){
+                formData.employeeCount = MAX_HUMAN_POPULATION
             } else {
                 formData.employeeCount = action.payload
             }
         },
         setZipCode: (formData, action) => {
             if(action.payload >= 0){
-                formData.zipCode = action.payload
+                if(formData.zipCode.length < 5){
+                    formData.zipCode = action.payload
+                }
             }
         },
         setBusinessEarnings: (formData, action) => {

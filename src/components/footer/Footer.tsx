@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styles from './Footer.module.css';
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { setActivePage, fetchCoterieAPI } from '../formStateSlice';
+import { setActivePage, fetchCoterieAPI } from '../../features/formStateSlice';
 import { AppDispatch } from '../../app/store';
+import { validateEmail } from '../../utils/textInputHandlers';
+import { PAGES } from '../../lib/CONSTANTS';
 
 const Footer = () => {
 
-  const { pages, activePage, availablePolicyTypes } = useSelector((state: any) => state.formState)
+  const { activePage } = useSelector((state: any) => state.formState)
   const formData = useSelector((state: any) => state.formData)
 
   const navigate = useNavigate();
@@ -16,20 +18,25 @@ const Footer = () => {
 
   const prevPage = () => {
     if(activePage > 0){
-      navigate(pages[activePage - 1])
+      navigate(PAGES[activePage - 1])
       dispatch(setActivePage(activePage - 1))
     }
   }
 
   const nextPage = () => {
     if(canUserProceed()){
-      navigate(`/${pages[activePage + 1]}`)
+      navigate(`/${PAGES[activePage + 1]}`)
       dispatch(setActivePage(activePage + 1))
     }
   }
 
+  const submitForm = async () => {
+    dispatch(fetchCoterieAPI(formData))
+    nextPage();
+  }
+
   const canUserProceed = (): boolean => {
-    const activePageLessThanMaxLength = activePage < (pages.length - 1)
+    const activePageLessThanMaxLength = activePage < (PAGES.length - 1)
     if(activePageLessThanMaxLength){
       switch(location.pathname){
       case '/industry':
@@ -39,7 +46,7 @@ const Footer = () => {
           break
         }
       case '/business_information':
-        if(typeof formData.businessName !== 'undefined' && typeof formData.employeeCount !== 'undefined' && typeof formData.zipCode !== 'undefined'){
+        if(typeof formData.businessName !== 'undefined' && typeof formData.employeeCount !== 'undefined' && formData.zipCode.length === 5){
           return true
         } else {
           break
@@ -51,7 +58,7 @@ const Footer = () => {
           break
         }
       case '/contact_details':
-        if(typeof formData.contactEmail !== 'undefined'){
+        if(validateEmail(formData.contactEmail)){
           return true
         } else {
           break
@@ -61,11 +68,6 @@ const Footer = () => {
       }
     }
     return false;
-  }
-
-  const submitForm = async () => {
-    dispatch(fetchCoterieAPI(formData))
-    nextPage();
   }
 
   return (
@@ -93,7 +95,6 @@ const Footer = () => {
           </button>
         }
       </div>
-      <a id={styles.saveForLaterText}>Save for Later</a>
     </div>
   )
 }

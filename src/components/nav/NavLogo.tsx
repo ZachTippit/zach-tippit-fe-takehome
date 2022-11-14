@@ -1,5 +1,5 @@
 import React from 'react'
-import {default as CoterieLogo} from '../../coterie-logo.png'
+import {default as CoterieLogo} from '../../lib/img/coterie-logo.png'
 import styles from './FormNav.module.css'
 
 const NavLogo = () => {

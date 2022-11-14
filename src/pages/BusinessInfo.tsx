@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { setBusinessName, setEmployeeCount, setZipCode } from '../formDataSlice';
+import { setBusinessName, setEmployeeCount, setZipCode } from '../features/formDataSlice';
 import styles from './QuoteForm.module.css'
 import { Helmet } from 'react-helmet'
-import { setActivePage } from '../formStateSlice';
+import { setActivePage } from '../features/formStateSlice';
 
 const BusinessInfo = () => {
 
@@ -12,7 +12,15 @@ const BusinessInfo = () => {
   
   useEffect(() => {
     dispatch(setActivePage(1))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  const checkInput = (input: string) => {
+    const onlyNums = RegExp(/^[0-9]+$/)
+    if(onlyNums.test(input)){
+      dispatch(setEmployeeCount(input))
+    }
+  }
 
   return (
   <div className={styles.formPage}>
@@ -32,10 +40,9 @@ const BusinessInfo = () => {
     <p><b>How many employees does your business have?</b></p>
     <input
       type='number'
-      placeholder="1" 
-      pattern="[0-9]*"
+      placeholder="1"
       value={employeeCount || ''}
-      onChange={(e) => dispatch(setEmployeeCount(e.target.value))} 
+      onChange={(e) => checkInput(e.target.value)} 
       className={styles.textInput} 
     />
 

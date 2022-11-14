@@ -1,9 +1,7 @@
 import React from 'react'
-import Footer from '../features/footer/Footer'
-import QuoteForm from '../features/form/QuoteForm'
-import FormNav from '../features/nav/FormNav'
 import { Outlet } from 'react-router-dom'
-import styles from '../features/form/QuoteForm.module.css'
+import styles from '../pages/QuoteForm.module.css'
+import FormNav from './nav/FormNav'
 
 const Layout = () => {
   return (

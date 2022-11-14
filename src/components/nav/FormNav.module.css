@@ -1,6 +1,7 @@
 #formNavContainer{
-    background-color: #f2f5fa;
+    background-color: var(--form-nav-bg);
     height: 100%;
+    letter-spacing: 1px;
 }
 
 #formNavDesktop{
@@ -10,7 +11,7 @@
 
 #formNavMobile{
     width: 100%;
-    background-color: #f2f5fa;
+    background-color:  var(--form-nav-bg);
 }
 
 #navLogo{
@@ -35,7 +36,7 @@
 #legalText a {
     text-decoration: none;
     font-weight: 700;
-    color: #4123ff;
+    color: var(--primary-color);
     padding: 1rem 0;
 }
 
@@ -88,23 +89,23 @@
 
 .activeNavLine {
     composes: navLine;
-    border-left: 1px solid rgb(65, 35, 255);
+    border-left: 1px solid var(--primary-color);
 }
 
 .inactiveNavLine{
     composes: navLine;
-    border-left: 1px dashed rgb(184, 184, 188);
+    border-left: 1px dashed var(--greyscale-accent);
 }
 
 .activeNavDot{
     composes: navDot;
-    border: 1px solid rgb(65, 35, 255);
+    border: 1px solid var(--primary-color);
     background-color: rgb(64, 255, 177);
 }
 
 .inactiveNavDot{
     composes: navDot;
-    border: 1px solid rgb(184, 184, 188);
+    border: 1px solid var(--greyscale-accent);
     background-color: #fff;
 }
 
@@ -129,10 +130,10 @@
 
 .activeStyle {
     width: fit-content;
-    color: #4123ff;
+    color: var(--primary-color);
     font-weight: 700;
     font-size: 13px;
-    border-bottom: 1px dashed rgb(65, 35, 255);
+    border-bottom: 1px dashed var(--primary-color);
 }
 
 .inactiveStyle {
@@ -141,7 +142,7 @@
 
 .unselectable {
     cursor: none;
-    color: rgb(184, 184, 188);
+    color: var(--placeholder-text);
     user-select: none !important;
 }
 
@@ -187,7 +188,7 @@
 
 #progress{
     height: 8px;
-    background-color: #40FFB1;
+    background-color: var(--secondary-color);
 }
 
 @media screen and (max-width: 768px) {

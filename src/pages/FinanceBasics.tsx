@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setBusinessEarnings, setPersonalEarnings } from '../formDataSlice'
+import { setBusinessEarnings, setPersonalEarnings } from '../features/formDataSlice'
 import styles from './QuoteForm.module.css'
 import { Helmet } from 'react-helmet'
-import { setActivePage } from '../formStateSlice'
+import { setActivePage } from '../features/formStateSlice'
 
 const FinanceBasics = () => {
 
@@ -29,7 +29,7 @@ const FinanceBasics = () => {
         onChange={(e) => dispatch(setBusinessEarnings(e.target.value))}
         className={styles.incomeDropdown}
       >
-        <option disabled style={{fontWeight: '600', color: '#666'}}>Select an Option</option>
+        <option disabled value=''style={{fontWeight: '600', color: '#666'}}>Select an Option</option>
         <option value="50000">$50,000</option>
         <option value="75000">$75,000</option>
         <option value="100000">$100,000</option>
@@ -45,7 +45,7 @@ const FinanceBasics = () => {
         onChange={(e) => dispatch(setPersonalEarnings(e.target.value))}
         className={styles.incomeDropdown}
       >
-        <option disabled style={{fontWeight: '600', color: '#666'}}>Select an Option</option>
+        <option disabled value='' style={{fontWeight: '600', color: '#666'}}>Select an Option</option>
         <option value="50000">$50,000</option>
         <option value="75000">$75,000</option>
         <option value="100000">$100,000</option>

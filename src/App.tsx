@@ -1,16 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import './App.css';
 import Layout from './components/Layout';
-import Footer from './features/footer/Footer';
-import BusinessInfo from './features/form/BusinessInfo';
-import ContactDetails from './features/form/ContactDetails';
-import FinanceBasics from './features/form/FinanceBasics';
-import Industry from './features/form/Industry';
-import Policies from './features/form/Policies';
+import Footer from './components/footer/Footer';
+import BusinessInfo from './pages/BusinessInfo';
+import ContactDetails from './pages/ContactDetails';
+import FinanceBasics from './pages/FinanceBasics';
+import Industry from './pages/Industry';
+import Policies from './pages/Policies';
 
-const App = () => {
-  
+const App = () => { 
   return (
     <Router>
       <Routes>

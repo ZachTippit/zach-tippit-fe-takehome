@@ -1,19 +1,18 @@
-import React, { useEffect } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { setActivePage } from '../formStateSlice'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { setActivePage } from '../../features/formStateSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from './FormNav.module.css'
 import { titleCase } from '../../utils/textInputHandlers'
+import { PAGES } from '../../lib/CONSTANTS'
 
 //  Source: https://stackoverflow.com/questions/64489395/converting-snake-case-string-to-title-case
 
 
-const BreadcrumbsMenuMobile = () => {
+const BreadcrumbsMenu = () => {
   
-  const { pages, activePage, maxActivePage } = useSelector((state: any) => state.formState)
-
+  const { maxActivePage } = useSelector((state: any) => state.formState)
   const dispatch = useDispatch();
-  
   let activeStyle = {
     width: 'fit-content',
     color: '#4123ff',
@@ -33,11 +32,11 @@ const BreadcrumbsMenuMobile = () => {
 
   return (
     <div>
-      { pages.map((page: string, index: number) => (
-        <div key={page} className={styles.navLink}>  
+      { PAGES.map((page: string, index: number) => (
+        <div key={page} className={styles.navLink}>
           <div className={styles.navStepperSegment}>
             <div className={(index <= maxActivePage) ? styles.activeNavDot : styles.inactiveNavDot} />
-            {index<(pages.length - 1) && <div className={(index <= maxActivePage) ? styles.activeNavLine : styles.inactiveNavLine} />}
+            {index<(PAGES.length - 1) && <div className={(index <= maxActivePage) ? styles.activeNavLine : styles.inactiveNavLine} />}
           </div>
           <div className={styles.navTextContainer}>
             <NavLink 
@@ -55,4 +54,4 @@ const BreadcrumbsMenuMobile = () => {
   )
 }
 
-export default BreadcrumbsMenuMobile
+export default BreadcrumbsMenu

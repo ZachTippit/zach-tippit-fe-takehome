@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { setContactEmail } from '../formDataSlice'
+import { setContactEmail } from '../features/formDataSlice'
 import { Helmet } from 'react-helmet'
 import styles from './QuoteForm.module.css'
-import { setActivePage } from '../formStateSlice'
+import { setActivePage } from '../features/formStateSlice'
 
 const ContactDetails = () => {
 

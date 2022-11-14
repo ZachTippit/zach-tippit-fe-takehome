@@ -1,0 +1,45 @@
+// This file is the rest of the unit tests that would have been written to check the logic of the form.
+// Admittedly got a little stuck on setting up a test utility around React Router and figured this would be a good stopping point.
+
+// describe('Footer form progress tests',() => {
+//     it('Active next button after Industry entries', () => {
+
+//     })
+    // it('Active next button after Business Info entries', () => {
+
+    // }),
+    // it('Active next button after Finance Basics entries', () => {
+
+    // }),
+    // it('Active next button after Contact Details entries', () => {
+
+    // })
+// })
+
+// describe('Inactive button tests on Footer', () => {
+//     it('Inactive Next button during Industry entries', () => {
+
+//     }),
+//     it('Inactive Next button during Business Info entries', () => {
+
+//     }),
+//     it('Inactive Next button during Finance Basics entries', () => {
+
+//     }),
+//     it('Inactive Next button during Contact Details entries', () => {
+
+//     }),
+//     it('Inactive Back button on first page', () => {
+
+//     })
+// })
+
+//describe('API Calls', () => {
+    //it('API Object Creator formats correctly', () => {}),
+    //it('API Call works', () => {})
+//})
+
+//describe('Policies page tests', () => {
+    //it('Renders policy objects on page')
+//})
+

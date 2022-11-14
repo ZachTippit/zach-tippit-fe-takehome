@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import { useDispatch, useSelector } from 'react-redux'
-import { convertToFullName } from '../../utils/textInputHandlers'
-import { setActivePage } from '../formStateSlice'
+import { convertToFullName } from '../utils/textInputHandlers'
+import { setActivePage } from '../features/formStateSlice'
 import styles from './QuoteForm.module.css'
 
 type PolicyCardProps = {
