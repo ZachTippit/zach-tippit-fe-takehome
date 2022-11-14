@@ -14,7 +14,7 @@ const PolicyCard: React.FunctionComponent<PolicyCardProps> = ({policyName}) => {
     <div className={styles.policyCard}>
       <h3>{convertToFullName(policyName)}</h3>
       <p>This is a text description of the policy.</p>
-      <a href='https://www.zachtippit.com' target='_blank'>Learn More</a>
+      <a href='https://www.zachtippit.com' target='_blank' rel="noopener noreferrer">Learn More</a>
       <input type='checkbox' />
     </div>
   )
@@ -27,6 +27,7 @@ const Policies = () => {
   
   useEffect(() => {
     dispatch(setActivePage(4))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const displayPolicies = () => {
@@ -47,9 +48,6 @@ const Policies = () => {
         <title>Coterie - Policies</title>
       </Helmet>
       { displayPolicies() }
-      {/* {availablePolicyTypes.map((policy: string) => (
-        <p>{policy}</p>
-      ))}   */}
     </div>
   )
 }

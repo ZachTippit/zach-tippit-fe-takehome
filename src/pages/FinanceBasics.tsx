@@ -12,6 +12,7 @@ const FinanceBasics = () => {
 
   useEffect(() => {
     dispatch(setActivePage(2))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

@@ -6,9 +6,6 @@ import styles from './FormNav.module.css'
 import { titleCase } from '../../utils/textInputHandlers'
 import { PAGES } from '../../lib/CONSTANTS'
 
-//  Source: https://stackoverflow.com/questions/64489395/converting-snake-case-string-to-title-case
-
-
 const BreadcrumbsMenu = () => {
   
   const { maxActivePage } = useSelector((state: any) => state.formState)
