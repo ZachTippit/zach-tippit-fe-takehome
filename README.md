@@ -12,16 +12,23 @@ The app was developed in **TypeScript** on the following packages.
 - React-testing-library for Unit tests
 - React-router-DOM for Routing
 - CSS Modules for styling, no additional component libraries were used
+
 ## Installation
 
 The app can be run locally by the following.
 - Clone repository to your local machine
-- In the working directory (./zach-tippit-fe-takehome by default), run the following.
+- Add a .env file in the working directory at the same level as the package.json file (./zach-tippit-fe-takehome by default)
+- Add the following:
+REACT_APP_COTERIE_API_URL = <url posted in original take home project, not posted here for security purposes>
+REACT_APP_COTERIE_AUTH_TOKEN = <token posted in original take home project, not posted here for security purposes>
+- In the working directory , run the following.
 
 ```
 npm install
 npm start
 ```
+
+The app should now run correctly.
 
 The testing suite can also be run by following the previous installation steps and running:
 
@@ -34,6 +41,7 @@ The app is also accessible from a deployed link at: [http://gr8st-coterie-quote-
 ## Testing
 
 All of the form entries incorporated unit tests to determine that state updates were triggered. Incorrect user inputs were taken care of with a combination of TypeScript type checking and input boundaries (e.g. Zip Code can't have >5 digits, can't proceed past form page until info is properly added)
+
 ## Wishlist (...if I had more time...)
 
 There was a snag with incorporating routing testing and went over my personally allotted time. Additional considerations were:
