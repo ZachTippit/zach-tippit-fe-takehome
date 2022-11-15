@@ -19,8 +19,8 @@ The app can be run locally by the following.
 - Clone repository to your local machine
 - Add a .env file in the working directory at the same level as the package.json file (./zach-tippit-fe-takehome by default)
 - Add the following:
-REACT_APP_COTERIE_API_URL = <url posted in original take home project, not posted here for security purposes>
-REACT_APP_COTERIE_AUTH_TOKEN = <token posted in original take home project, not posted here for security purposes>
+\REACT_APP_COTERIE_API_URL = <url posted in original take home project, not posted here for security purposes>
+\REACT_APP_COTERIE_AUTH_TOKEN = <token posted in original take home project, not posted here for security purposes>
 - In the working directory , run the following.
 
 ```
