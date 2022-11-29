@@ -1,11 +1,10 @@
 import React from 'react'
 import {default as CoterieLogo} from '../../lib/img/coterie-logo.png'
-import styles from './FormNav.module.css'
 
 const NavLogo = () => {
   return (
-    <div id={styles.navLogo}>
-      <img src={CoterieLogo} className={styles.logo} alt='Coterie Logo' />
+    <div id='navLogo'>
+      <img src={CoterieLogo} className='logo' alt='Coterie Logo' />
     </div>
   )
 }

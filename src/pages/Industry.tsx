@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styles from './QuoteForm.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setSearchingOccupation, setOccupation } from '../features/formDataSlice';
 import { capitalizeFirstLetter } from '../utils/textInputHandlers';
@@ -36,7 +35,7 @@ const Industry = () => {
   }, [])
 
   return (
-    <div className={styles.formPage}>
+    <div className='formPage'>
       <Helmet>
         <title>Coterie - Industry</title>
       </Helmet>
@@ -50,14 +49,14 @@ const Industry = () => {
         placeholder="Family dentists' offices"
         value={occupation || ''}
         onChange={(e) => dispatch(setSearchingOccupation(e.target.value.toLowerCase()))}
-        className={styles.textInput}  
+        className='formInput'  
       />
       <div>
         {(typeof occupation !== 'undefined' && typeof industryId === 'undefined') && <p><b>Did you mean...</b></p>}
         {filteredArray.map(job => (
           <button 
             key={job.name} 
-            className={styles.occupationButton}
+            className='occupationButton'
             onClick={() => dispatch(setOccupation(job))}
           >
             {capitalizeFirstLetter(job.name)}

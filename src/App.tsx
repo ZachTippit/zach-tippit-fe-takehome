@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout';
-import Footer from './components/footer/Footer';
+import Footer from './components/Footer';
 import BusinessInfo from './pages/BusinessInfo';
 import ContactDetails from './pages/ContactDetails';
 import FinanceBasics from './pages/FinanceBasics';

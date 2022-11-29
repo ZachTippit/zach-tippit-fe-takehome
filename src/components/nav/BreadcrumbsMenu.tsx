@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { setActivePage } from '../../features/formStateSlice'
 import { useDispatch, useSelector } from 'react-redux'
-import styles from './FormNav.module.css'
 import { titleCase } from '../../utils/textInputHandlers'
 import { PAGES } from '../../lib/CONSTANTS'
 
@@ -30,15 +29,15 @@ const BreadcrumbsMenu = () => {
   return (
     <div>
       { PAGES.map((page: string, index: number) => (
-        <div key={page} className={styles.navLink}>
-          <div className={styles.navStepperSegment}>
-            <div className={(index <= maxActivePage) ? styles.activeNavDot : styles.inactiveNavDot} />
-            {index<(PAGES.length - 1) && <div className={(index <= maxActivePage) ? styles.activeNavLine : styles.inactiveNavLine} />}
+        <div key={page} className='navLink'>
+          <div className='navStepperSegment'>
+            <div className={(index <= maxActivePage) ? 'activeNavDot' : 'inactiveNavDot'} />
+            {index<(PAGES.length - 1) && <div className={(index <= maxActivePage) ? 'activeNavLine' : 'inactiveNavLine'} />}
           </div>
-          <div className={styles.navTextContainer}>
+          <div className='navTextContainer'>
             <NavLink 
               to={page}
-              className={styles.navText} 
+              className='navText' 
               style={({isActive}) => (index <= maxActivePage) ? (isActive ? activeStyle : inactiveStyle) : unselectable }
               onClick={() => dispatch(setActivePage(index))}
             >

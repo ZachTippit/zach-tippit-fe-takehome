@@ -67,44 +67,53 @@
 
 }
 
-.toggle{
+.activeToggle{
+    object-fit: contain;
+    width: 20px;
+    transition: 0.15s all ease-in-out;
+    transform: rotate(-180deg);
+}
+
+.inactiveToggle{
     object-fit: contain;
     width: 20px;
     transition: 0.15s all ease-in-out;
 }
 
-.activeToggle{
-    composes: toggle;
-    transform: rotate(-180deg);
-}
-
-.inactiveToggle{
-    composes: toggle;
-}
-
-.navLine{
+.activeNavLine {
     flex: 1 1 0%;
     margin: 0px 0px -3px 6px;
-}
-
-.activeNavLine {
-    composes: navLine;
     border-left: 1px solid var(--primary-color);
 }
 
 .inactiveNavLine{
-    composes: navLine;
+    flex: 1 1 0%;
+    margin: 0px 0px -3px 6px;
     border-left: 1px dashed var(--greyscale-accent);
 }
 
 .activeNavDot{
-    composes: navDot;
+    border-radius: 20px;
+    width: 8px;
+    height: 8px;
+    margin-top: 1px;
+    margin-left: 2px;
+    padding: 0px;
+    background-clip: content-box;
+    position: relative;
     border: 1px solid var(--primary-color);
     background-color: rgb(64, 255, 177);
 }
 
 .inactiveNavDot{
-    composes: navDot;
+    border-radius: 20px;
+    width: 8px;
+    height: 8px;
+    margin-top: 1px;
+    margin-left: 2px;
+    padding: 0px;
+    background-clip: content-box;
+    position: relative;
     border: 1px solid var(--greyscale-accent);
     background-color: #fff;
 }

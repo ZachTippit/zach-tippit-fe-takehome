@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import { useDispatch, useSelector } from 'react-redux'
 import { convertToFullName } from '../utils/textInputHandlers'
 import { setActivePage } from '../features/formStateSlice'
-import styles from './QuoteForm.module.css'
 
 type PolicyCardProps = {
   policyName: string
@@ -11,7 +10,7 @@ type PolicyCardProps = {
 
 const PolicyCard: React.FunctionComponent<PolicyCardProps> = ({policyName}) => {
   return (
-    <div className={styles.policyCard}>
+    <div className='policyCard'>
       <h3>{convertToFullName(policyName)}</h3>
       <p>This is a text description of the policy.</p>
       <a href='https://www.zachtippit.com' target='_blank' rel="noopener noreferrer">Learn More</a>

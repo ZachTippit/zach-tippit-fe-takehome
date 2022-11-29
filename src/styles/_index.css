@@ -1,11 +1,13 @@
+@import './footer.css';
+@import './form.css';
+@import './nav.css';
+
 :root {
   --primary-color: #4123ff;
   --secondary-color: #40FFB1;
   --greyscale-accent: #b8b8bc;
   --form-nav-bg: #f2f5fa;
   --standard-border-radius: 4px;
-  
-
 }
 
 body {
