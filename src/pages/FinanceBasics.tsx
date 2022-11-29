@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setBusinessEarnings, setPersonalEarnings } from '../features/formDataSlice'
-import styles from './QuoteForm.module.css'
 import { Helmet } from 'react-helmet'
 import { setActivePage } from '../features/formStateSlice'
 
@@ -16,7 +15,7 @@ const FinanceBasics = () => {
   }, [])
 
   return (
-    <div className={styles.formPage}>
+    <div className='formPage'>
       <Helmet>
         <title>Coterie - Finance Basics</title>
       </Helmet>
@@ -28,7 +27,7 @@ const FinanceBasics = () => {
         id="annualBizIncome" 
         value={businessEarnings || ''}
         onChange={(e) => dispatch(setBusinessEarnings(e.target.value))}
-        className={styles.incomeDropdown}
+        className='formInput'
       >
         <option disabled value=''style={{fontWeight: '600', color: '#666'}}>Select an Option</option>
         <option value="50000">$50,000</option>
@@ -44,7 +43,7 @@ const FinanceBasics = () => {
         id="annualBizIncome" 
         value={personalEarnings || ''}
         onChange={(e) => dispatch(setPersonalEarnings(e.target.value))}
-        className={styles.incomeDropdown}
+        className='formInput'
       >
         <option disabled value='' style={{fontWeight: '600', color: '#666'}}>Select an Option</option>
         <option value="50000">$50,000</option>

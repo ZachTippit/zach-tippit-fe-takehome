@@ -1,9 +1,8 @@
 import React from 'react'
-import styles from './FormNav.module.css'
 
 const OfficialText = () => {
   return (
-    <div id={styles.legalText}>
+    <div id='legalText'>
         <a href='https://coterieinsurance.com/privacy-policy/' target='_blank' rel="noopener noreferrer">Privacy Policy</a>
         <br />
         <a href='https://coterieinsurance.com/terms-conditions/' target='_blank' rel="noopener noreferrer">Terms & Conditions</a>

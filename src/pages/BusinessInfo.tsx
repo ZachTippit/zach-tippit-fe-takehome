@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setBusinessName, setEmployeeCount, setZipCode } from '../features/formDataSlice';
-import styles from './QuoteForm.module.css'
 import { Helmet } from 'react-helmet'
 import { setActivePage } from '../features/formStateSlice';
 
@@ -23,39 +22,47 @@ const BusinessInfo = () => {
   }
 
   return (
-  <div className={styles.formPage}>
+  <div className='formPage'>
     <Helmet>
       <title>Coterie - Business Info</title>
     </Helmet>
     <h1>Business Information</h1>
 
-    <p><b>Business name</b></p>
+    <label htmlFor='businessName' className='formLabel'>
+      Business name
+    </label>
     <input 
+      id='businessName'
+      className='formInput'
       placeholder="Enter your business name"
       value={businessName || ''}
       onChange={(e) => dispatch(setBusinessName(e.target.value))} 
-      className={styles.textInput} 
     />
 
-    <p><b>How many employees does your business have?</b></p>
+    <label htmlFor='employeeCount' className='formLabel'>
+      How many employees does your business have?
+    </label>
     <input
+      id='employeeCount'
+      className='formInput'
       type='number'
       placeholder="1"
       value={employeeCount || ''}
       onChange={(e) => checkInput(e.target.value)} 
-      className={styles.textInput} 
     />
 
-    <p><b>Business zip code</b></p>
+    <label htmlFor='zipCode' className='formLabel'>
+      Business zip code
+    </label>
     <input
+      id='zipCode'
       type='text'
       placeholder="45242"
       value={zipCode || ''}
       pattern="[0-9]*"
       onChange={(e) => dispatch(setZipCode(e.target.value))}
-      className={styles.textInput}  
+      className='formInput'
     />
-
   </div>
   )
 }

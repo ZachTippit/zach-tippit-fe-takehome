@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setContactEmail } from '../features/formDataSlice'
 import { Helmet } from 'react-helmet'
-import styles from './QuoteForm.module.css'
 import { setActivePage } from '../features/formStateSlice'
 
 const ContactDetails = () => {
@@ -17,7 +16,7 @@ const ContactDetails = () => {
 
   
   return (
-    <div className={styles.formPage}>
+    <div className='formPage'>
       <Helmet>
         <title>Coterie - Contact Details</title>
       </Helmet>
@@ -29,7 +28,7 @@ const ContactDetails = () => {
         type="email"
         value={contactEmail || ''}
         onChange={(e) => dispatch(setContactEmail(e.target.value))}
-        className={styles.textInput}
+        className='formInput'
       />
 
     </div>

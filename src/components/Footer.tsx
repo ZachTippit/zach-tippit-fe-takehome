@@ -1,11 +1,10 @@
 import React from 'react'
-import styles from './Footer.module.css';
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { setActivePage, fetchCoterieAPI } from '../../features/formStateSlice';
-import { AppDispatch } from '../../app/store';
-import { validateEmail } from '../../utils/textInputHandlers';
-import { PAGES } from '../../lib/CONSTANTS';
+import { setActivePage, fetchCoterieAPI } from '../features/formStateSlice';
+import { AppDispatch } from '../app/store';
+import { validateEmail } from '../utils/textInputHandlers';
+import { PAGES } from '../lib/CONSTANTS';
 
 const Footer = () => {
 
@@ -71,24 +70,24 @@ const Footer = () => {
   }
 
   return (
-    <div id={styles.footer}>
-      <div id={styles.buttonContainer}>
+    <div id='footer'>
+      <div id='buttonContainer'>
         <button 
-          className={(activePage > 0) ? styles.backBtn : styles.inactiveBtn} 
+          className={((activePage > 0) ? 'back' : 'inactive') + ' button'} 
           onClick={() => prevPage()}
         >
           Back
         </button>
         {activePage === 3 ? 
           <button 
-            className={canUserProceed() ? styles.nextBtn : styles.inactiveBtn} 
+            className={(canUserProceed() ? 'next' : 'inactive') + ' button'} 
             onClick={() => submitForm()}
           >
             Submit
           </button>
         :
           <button 
-            className={canUserProceed() ? styles.nextBtn : styles.inactiveBtn} 
+            className={(canUserProceed() ? 'next' : 'inactive') + ' button'} 
             onClick={() => nextPage()}
           >
             Next
